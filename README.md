@@ -1,6 +1,6 @@
 # Emotion-Classification-of-Music
 
-![Deep Learning Architecture: Visual Representation](https://github.com/vivekr123/Emotion-Classification-of-Music/master/neural-net-visual-rep.png)
+![Deep Learning Architecture: Visual Representation](https://github.com/vivekr123/Emotion-Classification-of-Music/master/neural-net-architecture-color.png)
 
 The proposed deep learning architecture for extracting valence and arousal from music is shown above. Given the musically meaningful features, we simply needed to provide dense and convolutional layers, pooling, and dropout for the network to learn these values. That is, we approach this as a regression problem. We have two branches of the same network: one predicts valence and the other predicts arousal. The convolutional layers help identify local patterns in the chroma frequencies and Mel-Frequency Cepstral Coefficients. Meanwhile, the dense layers combine and summarize the extracted information from each of the features to predict the final values for valence and arousal.
 
