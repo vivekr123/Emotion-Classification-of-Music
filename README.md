@@ -11,7 +11,7 @@ We have two branches of the same network: one predicts valence and the other pre
 
 # 1000 Songs Dataset & Modifications
 
-The preprocessing was performed on the 1000 songs dataset (stored in "Training Data"), which provides the original music files and annotations of arousal and valence (both dynamic and static).
+The preprocessing was performed on the 1000 songs dataset, which provides the original music files and annotations of arousal and valence (results stored in "Training Data").
 
 The dataset contains the following:
 
