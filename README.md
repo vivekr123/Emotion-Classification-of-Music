@@ -1,6 +1,6 @@
 # Using Deep Learning to perform Emotion Classification of Music
 
-The proposed deep learning architecture for extracting valence and arousal from music is shown above. Given the musically meaningful features, we simply needed to provide dense and convolutional layers, pooling, and dropout for the network to learn these values. That is, we approach this as a regression problem. 
+The proposed deep learning architecture for extracting valence and arousal from music is shown below. Given the musically meaningful features, we use dense and convolutional layers, pooling, and dropout to learn the valence and arousal of songs. That is, we approach this as a regression problem. 
 
 
 ![Deep Learning Architecture: Visual Representation](https://github.com/vivekr123/Emotion-Classification-of-Music/blob/master/neural-net-architecture-color.png)
