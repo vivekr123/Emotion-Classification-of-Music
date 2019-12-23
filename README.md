@@ -38,37 +38,37 @@ The dataset contains the following:
   <li>Loudness (scalar): The Python pyloudnorm library provides a couple of concise methods to compute this.<br>
   </ul>
 
-Schemas
+<strong>Schemas</strong>
 
 The variables listed above are conveniently placed in appropriately shaped numpy arrays that are convenient for deep learning models. Simply specify these numpy arrays as inputs.
 
-Tempo
-Stored as tempo.npy
+Tempo<br>
+Stored as tempo.npy<br>
 Shape: (744,)
 
-Spectral Centroid
-Stored as spectral-centroid.npy
+Spectral Centroid<br>
+Stored as spectral-centroid.npy<br>
 Shape: (744, 200)
 
-Spectral Rolloff
-Stored as spectral-rolloff.npy
+Spectral Rolloff<br>
+Stored as spectral-rolloff.npy<br>
 Shape: (744, 200)
 
-Mel-Frequency Cepstral Coefficients
-Stored as mel-cepstral-coeffs.npy
+Mel-Frequency Cepstral Coefficients<br>
+Stored as mel-cepstral-coeffs.npy<br>
 Shape: (744, 20, 200, 1)
 
-Chroma Frequencies
-Stored as chroma.npy
+Chroma Frequencies<br>
+Stored as chroma.npy<br>
 Shape: (744, 12, 200, 1)
 
-Timbre
-Stored as timbre.npy
+Timbre<br>
+Stored as timbre.npy<br>
 Shape: (744, 10)
 
-Static Standardized Valence
-Stored as static-standardized-valence.npy
-Shape: (744,)
-Intended to be used as ground truth for training
+Static Standardized Valence<br>
+Stored as static-standardized-valence.npy<br>
+Shape: (744,)<br>
+Intended to be used as ground truth for training<br>
 
 NOTE: These are the annotations for ALL 1000 songs. Look at song ID’s to get appropriate 744 songs
