@@ -1,4 +1,4 @@
-# Emotion-Classification-of-Music
+# Using Deep Learning to perform Emotion Classification of Music
 
 The proposed deep learning architecture for extracting valence and arousal from music is shown above. Given the musically meaningful features, we simply needed to provide dense and convolutional layers, pooling, and dropout for the network to learn these values. That is, we approach this as a regression problem. 
 
