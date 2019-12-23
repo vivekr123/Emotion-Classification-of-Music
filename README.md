@@ -17,9 +17,11 @@ The dataset contains the following:
 
   ./Annotations
   Dynamic and static annotations in csv format of valence and arousal for 744 songs (song numbers provided)
+  
   ./static_annotations.csv also contains mean_valence_stand that compresses the provided annotated values to [-1, 1]
+  
   ./Extracted-Features
-  Tempo (scalar): the speed at which a passage of music is or should be played (librosa.beat.tempo)
+  Tempo (scalar): the speed at which a passage of music is or should be played (librosa.beat.tempo)<br>
   Spectral Centroid (vector): Indicates where the ”centre of mass” for a sound is located and is calculated as the weighted mean of the frequencies present in the sound. (librosa.feature.spectral_centroid)
   Spectral Rolloff (vector): measure of the shape of the signal. It represents the frequency below which a specified percentage of the total spectral energy. (librosa.feature.spectral_rolloff)
   Mel-Frequency Cepstral Coefficients (image): Concisely describe the overall shape of a spectral envelope. It models the characteristics of the human voice. (librosa.feature.mfcc)
