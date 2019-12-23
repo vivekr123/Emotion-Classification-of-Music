@@ -22,10 +22,10 @@ The dataset contains the following:
   <ul>
   <li>Tempo (scalar): the speed at which a passage of music is or should be played (librosa.beat.tempo)<br>
   <li>Spectral Centroid (vector): Indicates where the ”centre of mass” for a sound is located and is calculated as the weighted mean of the frequencies present in the sound. (librosa.feature.spectral_centroid)<br>
-  Spectral Rolloff (vector): measure of the shape of the signal. It represents the frequency below which a specified percentage of the total spectral energy. (librosa.feature.spectral_rolloff)<br>
-  Mel-Frequency Cepstral Coefficients (image): Concisely describe the overall shape of a spectral envelope. It models the characteristics of the human voice. (librosa.feature.mfcc)<br>
-  Chroma Frequencies (image):  the entire spectrum is projected onto 12 bins representing the 12 distinct semitones (or chroma) of the musical octave. (librosa.feature.chroma_stft)<br>
-  Timbre (vector): (first 8 computed with AudioCommons’ timbral_models)<br>
+  <li>Spectral Rolloff (vector): measure of the shape of the signal. It represents the frequency below which a specified percentage of the total spectral energy. (librosa.feature.spectral_rolloff)<br>
+  <li>Mel-Frequency Cepstral Coefficients (image): Concisely describe the overall shape of a spectral envelope. It models the characteristics of the human voice. (librosa.feature.mfcc)<br>
+  <li>Chroma Frequencies (image):  the entire spectrum is projected onto 12 bins representing the 12 distinct semitones (or chroma) of the musical octave. (librosa.feature.chroma_stft)<br>
+  <li>Timbre (vector): (first 8 computed with AudioCommons’ timbral_models)<br>
   Hardness (related to the attack times and the associated bandwidth - difference between low and high frequencies)<br>
   Depth (a weighted sum of fundamental frequency, approximate duration/decay-time, weighted mean of lower frequency ratios)<br>
   Brightness (prevalence of upper mid and high frequency content)<br>
@@ -34,9 +34,9 @@ The dataset contains the following:
   Sharpness (related  to  the  spectral  balance of frequencies)<br>
   Boominess (prevalence of lower frequencies)<br>
   Reverberation (persistence of sound after the sound is produced)<br>
+  <li>Zero Crossing Rate (scalar): Simply the number of times the signal crosses the x-axis (i.e. changing from negative to positive or vice versa). Computed by (np.where(np.diff(np.sign(data)))[0].size)/duration <br>
+  <li>Loudness (scalar): The Python pyloudnorm library provides a couple of concise methods to compute this.<br>
   </ul>
-  Zero Crossing Rate (scalar): Simply the number of times the signal crosses the x-axis (i.e. changing from negative to positive or vice versa). Computed by (np.where(np.diff(np.sign(data)))[0].size)/duration <br>
-  Loudness (scalar): The Python pyloudnorm library provides a couple of concise methods to compute this.<br>
 
 Schemas
 
