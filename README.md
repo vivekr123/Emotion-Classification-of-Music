@@ -26,14 +26,14 @@ The dataset contains the following:
   <li>Mel-Frequency Cepstral Coefficients (image): Concisely describe the overall shape of a spectral envelope. It models the characteristics of the human voice. (librosa.feature.mfcc)<br>
   <li>Chroma Frequencies (image):  the entire spectrum is projected onto 12 bins representing the 12 distinct semitones (or chroma) of the musical octave. (librosa.feature.chroma_stft)<br>
   <li>Timbre (vector): (first 8 computed with AudioCommons’ timbral_models)<br>
-  &emspHardness (related to the attack times and the associated bandwidth - difference between low and high frequencies)<br>
-  &emspDepth (a weighted sum of fundamental frequency, approximate duration/decay-time, weighted mean of lower frequency ratios)<br>
-  &emspBrightness (prevalence of upper mid and high frequency content)<br>
-  &emspRoughness (buzzing,  harsh,  raspy  sound  quality  of  narrow  harmonic  intervals)<br>
-  &emspWarmth (the tilt towards the bass frequencies)<br>
-  &emspSharpness (related  to  the  spectral  balance of frequencies)<br>
-  &emspBoominess (prevalence of lower frequencies)<br>
-  &emspReverberation (persistence of sound after the sound is produced)<br>
+  &emsp Hardness (related to the attack times and the associated bandwidth - difference between low and high frequencies)<br>
+  &emsp Depth (a weighted sum of fundamental frequency, approximate duration/decay-time, weighted mean of lower frequency ratios)<br>
+  &emsp Brightness (prevalence of upper mid and high frequency content)<br>
+  &emsp Roughness (buzzing,  harsh,  raspy  sound  quality  of  narrow  harmonic  intervals)<br>
+  &emsp Warmth (the tilt towards the bass frequencies)<br>
+  &emsp Sharpness (related  to  the  spectral  balance of frequencies)<br>
+  &emsp Boominess (prevalence of lower frequencies)<br>
+  &emsp Reverberation (persistence of sound after the sound is produced)<br>
   <li>Zero Crossing Rate (scalar): Simply the number of times the signal crosses the x-axis (i.e. changing from negative to positive or vice versa). Computed by (np.where(np.diff(np.sign(data)))[0].size)/duration <br>
   <li>Loudness (scalar): The Python pyloudnorm library provides a couple of concise methods to compute this.<br>
   </ul>
