@@ -1,7 +1,7 @@
 # Emotion-Classification-of-Music
 
 <<<<<<< HEAD
-![Deep Learning Architecture: Visual Representation](https://github.com/vivekr123/Emotion-Classification-of-Music/master/neural-net-visual-rep.png)
+![Deep Learning Architecture: Visual Representation](https://github.com/vivekr123/Emotion-Classification-of-Music/master/neural-net-architecture-color.png)
 
 =======
 >>>>>>> af283154470b3b098d4d36adbd25ef04149b79b5
