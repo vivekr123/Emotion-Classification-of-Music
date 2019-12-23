@@ -47,28 +47,40 @@ Stored as tempo.npy<br>
 Shape: (744,)
 
 Spectral Centroid<br>
-Stored as spectral-centroid.npy<br>
-Shape: (744, 200)
+<ul>
+<li>Stored as spectral-centroid.npy<br>
+<li>Shape: (744, 200)
+</ul>
 
 Spectral Rolloff<br>
-Stored as spectral-rolloff.npy<br>
-Shape: (744, 200)
+<ul>
+<li>Stored as spectral-rolloff.npy<br>
+<li>Shape: (744, 200)
+  </ul>
 
 Mel-Frequency Cepstral Coefficients<br>
-Stored as mel-cepstral-coeffs.npy<br>
-Shape: (744, 20, 200, 1)
+<ul>
+<li>Stored as mel-cepstral-coeffs.npy<br>
+<li>Shape: (744, 20, 200, 1)
+  </ul>
 
 Chroma Frequencies<br>
-Stored as chroma.npy<br>
-Shape: (744, 12, 200, 1)
+<ul>
+<li>Stored as chroma.npy<br>
+<li>Shape: (744, 12, 200, 1)
+</ul>
 
 Timbre<br>
-Stored as timbre.npy<br>
-Shape: (744, 10)
+<ul>
+<li>Stored as timbre.npy<br>
+<li>Shape: (744, 10)
+</ul>
 
 Static Standardized Valence<br>
-Stored as static-standardized-valence.npy<br>
-Shape: (744,)<br>
-Intended to be used as ground truth for training<br>
+<ul>
+<li>Stored as static-standardized-valence.npy<br>
+<li>Shape: (744,)<br>
+<li>Intended to be used as ground truth for training<br>
+</ul>
 
 NOTE: These are the annotations for ALL 1000 songs. Look at song ID’s to get appropriate 744 songs
