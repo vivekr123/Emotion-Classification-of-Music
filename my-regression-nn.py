@@ -21,7 +21,6 @@ def baseline_model():
     # first branch
     x = Conv2D(filters=4, input_shape=(12, 200, 1), kernel_size=(3, 3), activation='relu')(chroma)
     x = MaxPooling2D((2,2))(x)
-    # x = Flatten()(x)
     x = Reshape((1980,))(x)
     x = Dense(100, activation='relu')(x)
     # x = Dropout(0.2)(x)
@@ -34,7 +33,6 @@ def baseline_model():
 
     # third branch
     z = Dense(100, activation='relu')(centroid)
-    # z = Dropout(0.3)(z)
     z = Dense(40, activation='relu')(z)
     z = Dense(20, activation='relu')(z)
 
@@ -44,7 +42,6 @@ def baseline_model():
 
     # fifth branch
     b = Dense(10, activation='relu')(timbre)
-    # b = Dense(20, activation='relu')(b)
 
     # sixth branch
     # c = Dense(1, activation='relu')(tempo)
@@ -64,60 +61,32 @@ def baseline_model():
     return model
 
 
-chromaStore = np.load('/h2/vivek/Documents/chromaStoreZ.npy')
-centStore = np.load('/h2/vivek/Documents/centStoreZ.npy')
-rolloffStore = np.load('/h2/vivek/Documents/rolloffStoreZ.npy')
-mfccsStore = np.load('/h2/vivek/Documents/mfccs.npy')
-timbreInput = np.vstack(np.load('/h2/vivek/Documents/audio-features.npy'))
-
-# timbre = []
-# for i in timbreInput:
-#     timbre.append(np.reshape(i, (1, 10)))
-#
-# timbre = np.stack(timbre)
+chromaStore = np.load('/h2/vivek/Documents/chroma.npy')
+centStore = np.load('/h2/vivek/Documents/spectral-centroid.npy.npy')
+rolloffStore = np.load('/h2/vivek/Documents/spectral-rolloff.npy')
+mfccsStore = np.load('/h2/vivek/Documents/mel-cepstral-coeffs.npy')
+timbreInput = np.vstack(np.load('/h2/vivek/Documents/timbre.npy'))
 timbre = timbreInput
-
-# might be in the WRONG format :(
 
 tempoStore = []
 
-# ground truth values
+# ground truth values -> get from annotations folder (in this case, we use the static annotations
 dataframe = pd.read_csv('/net/cvcfs/storage/spotify-datasets/1000-songs/Annotations/static_annotations.csv')
 songs = dataframe[['song_id']]
+# only training on valence (i.e. one branch)
 extraneous = ['song_id', 'mean_arousal', 'std_arousal', 'std_valence', 'mean_valence']
 dataframe = dataframe.drop(extraneous, axis=1)
 print(dataframe.keys())
 Y = dataframe.values
-# Y = Y[:100]
 Y = Y.squeeze()
 np.save('/net/cvcfs/storage/spotify-datasets/1000-songs/Extracted-Features/static-standardized-valence.npy', Y)
-
-centStore = centStore.reshape(744, 200)
-rolloffStore = rolloffStore.reshape(744, 200)
-
-chromaStore = chromaStore.reshape(744, 12, 200, 1)
-mfccsStore = mfccsStore.reshape(744, 20, 200, 1)
-
-print("Y:            ", Y.shape)
-print("chromaStore:  ", chromaStore.shape)
-print("mfccsStore:   ", mfccsStore.shape)
-print("rolloffStore: ", rolloffStore.shape)
-print("centStore:    ", centStore.shape)
-print("timbre: ", timbre.shape)
-
-
-# np.save('/net/cvcfs/storage/spotify-datasets/1000-songs/Extracted-Features/spectral-centroid.npy', centStore)
-# np.save('/net/cvcfs/storage/spotify-datasets/1000-songs/Extracted-Features/spectral-rolloff.npy', rolloffStore)
-# np.save('/net/cvcfs/storage/spotify-datasets/1000-songs/Extracted-Features/mel-cepstral-coeffs.npy', mfccsStore)
-# np.save('/net/cvcfs/storage/spotify-datasets/1000-songs/Extracted-Features/chroma.npy', chromaStore)
-# np.save('/net/cvcfs/storage/spotify-datasets/1000-songs/Extracted-Features/timbre.npy', timbre)
 
 model = baseline_model()
 model.fit([chromaStore[10:], mfccsStore[10:], rolloffStore[10:], centStore[10:], timbre[10:]], Y[10:], steps_per_epoch=2000, epochs=5, validation_split = 0.2, validation_steps=1, verbose=True)
 print(model.predict([chromaStore[:10], mfccsStore[:10], rolloffStore[:10], centStore[:10], timbre[:10]]))
 
 '''
-# save the model
+# save the model, if needed
 
 model_json = model.to_json()
 
