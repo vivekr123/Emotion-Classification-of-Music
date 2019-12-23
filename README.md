@@ -83,4 +83,4 @@ Static Standardized Valence<br>
 <li>Intended to be used as ground truth for training<br>
 </ul>
 
-NOTE: These are the annotations for ALL 1000 songs. Look at song ID’s to get appropriate 744 songs
+NOTE: The static-standardized-valence.npy contains the appropriate 744 songs in question. However, the annotations in ./annotations is for ALL 1000 songs. Look at song ID’s to get appropriate 744 songs.
