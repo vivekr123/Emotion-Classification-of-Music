@@ -61,25 +61,17 @@ def baseline_model():
     return model
 
 
-chromaStore = np.load('/h2/vivek/Documents/chroma.npy')
-centStore = np.load('/h2/vivek/Documents/spectral-centroid.npy.npy')
-rolloffStore = np.load('/h2/vivek/Documents/spectral-rolloff.npy')
-mfccsStore = np.load('/h2/vivek/Documents/mel-cepstral-coeffs.npy')
-timbreInput = np.vstack(np.load('/h2/vivek/Documents/timbre.npy'))
+chromaStore = np.load('chroma.npy')
+centStore = np.load('spectral-centroid.npy.npy')
+rolloffStore = np.load('spectral-rolloff.npy')
+mfccsStore = np.load('mel-cepstral-coeffs.npy')
+timbreInput = np.vstack(np.load('timbre.npy'))
 timbre = timbreInput
 
 tempoStore = []
 
-# ground truth values -> get from annotations folder (in this case, we use the static annotations
-dataframe = pd.read_csv('/net/cvcfs/storage/spotify-datasets/1000-songs/Annotations/static_annotations.csv')
-songs = dataframe[['song_id']]
-# only training on valence (i.e. one branch)
-extraneous = ['song_id', 'mean_arousal', 'std_arousal', 'std_valence', 'mean_valence']
-dataframe = dataframe.drop(extraneous, axis=1)
-print(dataframe.keys())
-Y = dataframe.values
-Y = Y.squeeze()
-np.save('/net/cvcfs/storage/spotify-datasets/1000-songs/Extracted-Features/static-standardized-valence.npy', Y)
+# ground truth values -> can get original annotations from annotations folder (in this case, we use the static annotations
+Y = np.load('/Extracted-Features/static-standardized-valence.npy')
 
 model = baseline_model()
 model.fit([chromaStore[10:], mfccsStore[10:], rolloffStore[10:], centStore[10:], timbre[10:]], Y[10:], steps_per_epoch=2000, epochs=5, validation_split = 0.2, validation_steps=1, verbose=True)
