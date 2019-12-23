@@ -26,8 +26,8 @@ The dataset contains the following:
   <li>Mel-Frequency Cepstral Coefficients (image): Concisely describe the overall shape of a spectral envelope. It models the characteristics of the human voice. (librosa.feature.mfcc)<br>
   <li>Chroma Frequencies (image):  the entire spectrum is projected onto 12 bins representing the 12 distinct semitones (or chroma) of the musical octave. (librosa.feature.chroma_stft)<br>
   <li>Timbre (vector): (first 8 computed with AudioCommons’ timbral_models)<br>
-  &nbsp &nbsp &nbsp &nbsp Hardness (related to the attack times and the associated bandwidth - difference between low and high frequencies)<br>
-  &nbsp &nbsp &nbsp &nbsp Depth (a weighted sum of fundamental frequency, approximate duration/decay-time, weighted mean of lower frequency ratios)<br>
+  &nbsp &nbsp &nbsp &nbsp Hardness (related to attack times and associated bandwidth- difference between low and high frequencies)<br>
+  &nbsp &nbsp &nbsp &nbsp Depth (weighted sum of fundamental frequency, approximate duration/decay-time, weighted mean of lower frequency ratios)<br>
   &nbsp &nbsp &nbsp &nbsp Brightness (prevalence of upper mid and high frequency content)<br>
   &nbsp &nbsp &nbsp &nbsp Roughness (buzzing,  harsh,  raspy  sound  quality  of  narrow  harmonic  intervals)<br>
   &nbsp &nbsp &nbsp &nbsp Warmth (the tilt towards the bass frequencies)<br>
