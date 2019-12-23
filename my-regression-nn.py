@@ -60,7 +60,7 @@ def baseline_model():
     model.compile(loss='mean_squared_error', optimizer=k.optimizers.adadelta(lr=1.0, rho=0.95), metrics=['mse'])
     return model
 
-
+# adjust the paths accordingly
 chromaStore = np.load('chroma.npy')
 centStore = np.load('spectral-centroid.npy.npy')
 rolloffStore = np.load('spectral-rolloff.npy')
